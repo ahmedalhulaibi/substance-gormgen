@@ -27,7 +27,7 @@ func main() {
 	dbtype := flag.String("db", "", "Database driver name.\nSupported databases types:\n\t- mysql\n\t- postgres \n\t- sqlite3\n")
 	connString := flag.String("cnstr", "", "Connection string to connect to database.")
 	jsonSourceFilePath := flag.String("jsonsrc", "substance-objects.json", "JSON substance-objects.json file describing the database objects. This can be used as an alternative to providing connection info.")
-	outputSrcFilePath := flag.String("file", "gengorm.go", "File to output source code. If blank outputs to stdout.")
+	outputSrcFilePath := flag.String("file", "gengorm.go", "File to output source code. Defaults to gengorm.go . If file=\"\" outputs to stdout.")
 	flag.Parse()
 
 	var objects map[string]substancegen.GenObjectType
