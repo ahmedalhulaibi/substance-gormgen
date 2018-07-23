@@ -65,6 +65,7 @@ func main() {
 		log.Println("printing objects")
 		log.Println(objects)
 		var outputBuff bytes.Buffer
+		outputBuff.WriteString("package model\n\n")
 		gorm.GenObjectsGormCrud(objects, &outputBuff)
 		err := ioutil.WriteFile(*outputSrcFilePath, outputBuff.Bytes(), 0664)
 		if err != nil {
